@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-router.fetch('/',()=>{
-    console.log('fetch');
+router.put('/',()=>{
+    console.log('put');
 })
 module.exports = router
