@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-router.post('/',()=>{
-    console.log('post');
-})
+
+router.fetch('',()=>{})
+
 module.exports = router
