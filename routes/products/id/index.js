@@ -1,5 +1,6 @@
-module.exports = (express,router)=>{
-    const getRouter = require('./get')(express,router)
-    router.use('/',getRouter)
-    return router
-}
+const express = require('express')
+const router = express.Router()
+const getRouter = require('./get')
+
+router.use('/',getRouter)
+module.exports = router

@@ -1,6 +1,6 @@
-module.exports = (express,router)=>{
-    router.post('/',()=>{
+const express = require('express')
+const router = express.Router()
+router.post('/',()=>{
     console.log('post');
 })
-return router
-}
+module.exports = router

@@ -1,6 +1,6 @@
-module.exports = (express,router)=>{
-    router.delete('/',()=>{
+const express = require('express')
+const router = express.Router()
+router.delete('/',()=>{
     console.log('delete');
 })
-return router
-}
+module.exports = router

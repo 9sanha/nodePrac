@@ -1,8 +1,8 @@
-module.exports = (express,router)=>{
-    const checkRouter = require('./check/index')(express,router)
-    const postRouter = require('./post')(express,router)
+const express = require('express');
+const router = express.Router()
+const checkRouter = require('./check/index')
+const postRouter = require('./post')
 
-    router.use('/signup',[checkRouter,postRouter])
-    return router
+router.use('/signup',[checkRouter,postRouter])
 
-}
+module.exports = router

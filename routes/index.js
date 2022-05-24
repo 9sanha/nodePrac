@@ -1,11 +1,9 @@
 const express = require('express')
 const router = express.Router()
 
-module.exports = (express,router)=>{
-    
-    const userRouter = require('./users/index')(express,router)
-    const cartRouter = require('./carts/index')(express,router)
-    const productRouter = require('./products/index')(express,router)
+const userRouter = require('./users/index')
+const cartRouter = require('./carts/index')
+const productRouter = require('./products/index')
 
-    router.use('/',[userRouter,cartRouter,productRouter])
-    }
+router.use('/',[userRouter,cartRouter,productRouter])
+module.exports = router

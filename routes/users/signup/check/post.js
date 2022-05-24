@@ -1,6 +1,8 @@
-module.exports = (express,router)=>{
-    router.post('/',()=>{
+const express = require('express');
+const router = express.Router();
+
+router.post('/',()=>{
     console.log('/users/signup/check');
 })
-return router
-}
+
+module.exports = router

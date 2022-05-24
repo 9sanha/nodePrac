@@ -1,14 +1,17 @@
-module.exports = (express,router)=>{
-    const idRouter = require('./id/index')(express,router)
-    const categoryRouter = require('./category/index')(express,router)
-    const deleteRouter = require('./delete')(express,router)
-    const fetchRouter = require('./fetch')(express,router)
-    const postRouter = require('./post')(express,router)
+const express = require('express')
+const router = express.Router()
 
-    router.use('/products',[
-        idRouter, 
-        categoryRouter, 
-        deleteRouter, 
-        fetchRouter, 
-        postRouter])
-}
+const idRouter = require('./id/index')
+const categoryRouter = require('./category/index')
+const deleteRouter = require('./delete')
+const fetchRouter = require('./fetch')
+const postRouter = require('./post')
+
+router.use('/products',[
+    idRouter, 
+    categoryRouter, 
+    deleteRouter, 
+    fetchRouter, 
+    postRouter])
+
+module.exports = router

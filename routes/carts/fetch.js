@@ -1,5 +1,6 @@
-module.exports = (express,router)=>{
-    
-    router.put('',()=>{})
-    return router
-}
+const express = require('express')
+const router = express.Router()
+
+router.put('',()=>{})
+
+module.exports = router

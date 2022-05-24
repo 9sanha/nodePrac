@@ -1,6 +1,7 @@
-module.exports = (express,router)=>{
-    router.get(`/:productId`,()=>{
+const express = require('express')
+const router = express.Router()
+router.get(`/:productId`,()=>{
     console.log('get product id');
-    })
-    return router
-}
+})
+
+module.exports = router

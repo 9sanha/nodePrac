@@ -1,7 +1,9 @@
-module.exports = (express,router)=>{
-    const signupRoute = require('./signup/index')(express,router)
-    const signinRoute = require('./signin/index')(express,router)
+const express = require('express');
+const router = express.Router()
 
-    router.use('/users',[signupRoute,signinRoute])
-    return router
-}
+const signupRoute = require('./signup/index')
+const signinRoute = require('./signin/index')
+
+router.use('/users',[signupRoute,signinRoute])
+
+module.exports = router

@@ -2,10 +2,11 @@ const express = require("express")
 const { sequelize } = require('./models')
 const app = express()
 const port = 3000
-const router = require('./routes/index')
+const routes = require('./routes/index')
+const bodyParser = require('body-parser'); 
 
-
-app.use('/',router)
+app.use(bodyParser.json());
+app.use('/',routes)
 
 // force: true -> 테이블 생성할 때 테이블이 존재하면 삭제
 sequelize.sync({ force: true })
