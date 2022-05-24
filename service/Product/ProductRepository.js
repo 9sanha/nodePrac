@@ -11,6 +11,15 @@ class ProductRepository{
             description: product.description
         })
     }
+
+    findAllByCategory = (category)=>{
+        return Product.findAll({
+            attributes:['id','name','price','brand','image','category'],
+            where:{
+                category:category
+            }
+        })
+    }
 }
 
 module.exports = new ProductRepository();

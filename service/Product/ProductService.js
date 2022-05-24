@@ -7,6 +7,11 @@ class ProductService{
 
         return product
     }
+
+    getByCategory = async (category)=>{
+        const products = await productRepository.findAllByCategory(category)
+        return products
+    }
 }
 
 module.exports = new ProductService()
