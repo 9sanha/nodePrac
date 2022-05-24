@@ -20,9 +20,9 @@ class UserRepository{
         })
     }
 
-    findByuserId = (userId)=>{
+    findByUserId = (userId)=>{
         return User.findAll({
-            attributes:['id'],
+            attributes:['id','userId','password'],
             where:{
                 userId:userId
             }

@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use('/',routes)
 
 // force: true -> 테이블 생성할 때 테이블이 존재하면 삭제
-sequelize.sync({ force: true })
+sequelize.sync({ force: false })
     .then(() => {
         console.log('데이터베이스 연결 성공');
     })
