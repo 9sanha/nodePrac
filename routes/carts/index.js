@@ -1,11 +1,9 @@
-const express = require('express')
-const router = express.Router()
+module.exports = (express,router)=>{
+    const getRoute = require('./get')(express,router)
+    const postRoute = require('./post')(express,router)
+    const fetchRoute = require('./fetch')(express,router)
+    const deleteRoute = require('./delete')(express,router)
 
-const getRoute = require('./get')
-const postRoute = require('./post')
-const fetchRoute = require('./fetch')
-const deleteRoute = require('./delete')
+    router.use('/carts',[getRoute,postRoute,fetchRoute,deleteRoute])
 
-router.use('/carts',[getRoute,postRoute,fetchRoute,deleteRoute])
-
-module.exports = router
+}

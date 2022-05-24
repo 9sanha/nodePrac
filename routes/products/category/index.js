@@ -1,7 +1,6 @@
-const express = require('express')
-const router = express.Router()
+module.exports = (express,router)=>{
+    const getRoute = require('./get')(express,router)
+    router.use('/',getRoute)
+    return router
 
-const getRoute = require('./get')
-router.use('/',getRoute)
-
-module.exports = router
+}

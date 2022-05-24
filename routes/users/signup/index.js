@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router()
-const checkRouter = require('./check/index')
-const postRouter = require('./post')
+module.exports = (express,router)=>{
+    const checkRouter = require('./check/index')(express,router)
+    const postRouter = require('./post')(express,router)
 
-router.use('/signup',[checkRouter,postRouter])
+    router.use('/signup',[checkRouter,postRouter])
+    return router
 
-module.exports = router
+}

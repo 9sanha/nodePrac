@@ -1,8 +1,8 @@
-const express = require('express')
-const router = express.Router()
 
-router.delete('/',()=>{
+
+module.exports = (express,router)=>{
+    router.delete('/',()=>{
     console.log('signin delete');
 })
-
-module.exports = router
+return router
+}

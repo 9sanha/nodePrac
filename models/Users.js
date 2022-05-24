@@ -26,7 +26,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         role: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            defaultValue: "customer"
         },
     }, {
         charset: "utf8", // 한국어 설정

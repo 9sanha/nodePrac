@@ -1,8 +1,7 @@
-const express = require('express');
-const router = express.Router();
-
-router.post('/',()=>{
-    console.log('/users/signup');
-})
-
-module.exports = router
+module.exports = (express,router)=>{
+    router.post('/',(req,res)=>{
+        const body = req.body
+        console.log('/users/signup');
+    })
+    return router
+}
