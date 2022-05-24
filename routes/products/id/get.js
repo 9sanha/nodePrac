@@ -1,7 +1,13 @@
 const express = require('express')
 const router = express.Router()
-router.get(`/:productId`,()=>{
-    console.log('get product id');
+const productService = require('../../../service/Product/ProductService')
+router.get(`/:productId`,async (req, res)=>{
+
+    const id = req.params.productId
+    
+    const product = await productService.detail(Number(id))
+
+    res.status(200).json({data:product})
 })
 
 module.exports = router

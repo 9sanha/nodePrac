@@ -20,6 +20,14 @@ class ProductRepository{
             }
         })
     }
+
+    findById = (id)=>{
+        return Product.findAll({
+            where:{
+                id:id
+            }
+        })
+    }
 }
 
 module.exports = new ProductRepository();

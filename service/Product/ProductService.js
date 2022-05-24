@@ -12,6 +12,11 @@ class ProductService{
         const products = await productRepository.findAllByCategory(category)
         return products
     }
+
+    detail = async (id)=>{
+        const product = await productRepository.findById(id)
+        return product
+    }
 }
 
 module.exports = new ProductService()
