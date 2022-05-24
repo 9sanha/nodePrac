@@ -1,8 +1,6 @@
-const express = require('express');
-const router = express.Router();
-
-router.post('/',()=>{
+module.exports = (express,router)=>{
+    router.post('/',()=>{
     console.log('/users/signup/check');
 })
-
-module.exports = router
+return router
+}

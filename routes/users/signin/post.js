@@ -1,9 +1,8 @@
-const express = require('express');
-const router = express.Router()
+module.exports = (express,router)=>{
+    router.post('/',()=>{
+        console.log('signin');
+    })
+    return router
 
-router.post('/',()=>{
-    console.log('signin');
-})
-
-module.exports = router
+}
 
