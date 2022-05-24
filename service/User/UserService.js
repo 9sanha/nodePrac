@@ -6,6 +6,18 @@ class UserService {
         const user = await userRepository.save(body);
         return user
     }
+
+    check = async (target,value)=> {
+        let user;
+        if (target === "email"){
+            user = await userRepository.findByEmail(value)
+        }else{
+            user = await userRepository.findByuserId(value)
+        }
+        if(user[0] !== undefined){
+            return false
+        }else return true
+    }
 }
 
 module.exports = new UserService();

@@ -10,6 +10,24 @@ class UserRepository{
             email:user.email
         })
     }
+
+    findByEmail = async (email)=>{
+        return User.findAll({
+            attributes:['id'],
+            where:{
+                email:email
+            }
+        })
+    }
+
+    findByuserId = (userId)=>{
+        return User.findAll({
+            attributes:['id'],
+            where:{
+                userId:userId
+            }
+        })
+    }
 }
 
 module.exports = new UserRepository()
