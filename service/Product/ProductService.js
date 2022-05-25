@@ -17,6 +17,10 @@ class ProductService{
         const product = await productRepository.findById(id)
         return product
     }
+
+    updateInfo = (product)=>{
+        productRepository.update(product)
+    }
 }
 
 module.exports = new ProductService()

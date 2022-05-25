@@ -10,7 +10,7 @@ class UserRepository{
             email:user.email
         })
     }
-
+    //TODO: findOne
     findByEmail = async (email)=>{
         return User.findAll({
             attributes:['id'],
@@ -19,7 +19,7 @@ class UserRepository{
             }
         })
     }
-
+    //TODO: findOne
     findByUserId = (userId)=>{
         return User.findAll({
             attributes:['id','userId','password'],
