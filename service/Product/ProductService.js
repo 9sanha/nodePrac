@@ -18,8 +18,10 @@ class ProductService{
         return product
     }
 
-    updateInfo = (product)=>{
-        productRepository.update(product)
+    updateInfo = async(product)=>{
+        console.log(product);
+        const a = await productRepository.update(product)
+        console.log(a);
     }
 }
 

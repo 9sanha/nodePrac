@@ -1,6 +1,7 @@
-const db =  require('../../models/index')
-const Product = db.Products
-class ProductRepository{
+const {Product} = require('../../schema/Products')
+
+
+class ProductRepository {
     save = (product)=>{
         return Product.create({
             name: product.name,
@@ -13,36 +14,24 @@ class ProductRepository{
     }
 
     findAllByCategory = (category)=>{
-        return Product.findAll({
-            attributes:['id','name','price','brand','image','category'],
-            where:{
-                category:category
-            }
-        })
+        return Product.find({ category:category })
     }
 
     findById = (id)=>{
-        //TODO: findOne
-        return Product.findAll({
-            where:{
-                id:id
-            }
-        })
+        return Product.findById(id)
     }
 
     update = (product)=>{
-        return Product.update({
-            name: product.name,
-            price: product.price,
-            brand: product.brand,
-            category: product.category,
-            image: product.image,
-            description: product.description
-        }, {
-            where: {
-                id: product.id
+        return Product.findByIdAndUpdate(product.id,
+            {
+                name: product.name,
+                price: product.price,
+                brand: product.brand,
+                category: product.category,
+                image: product.image,
+                description: product.description
             }
-        })
+        )
     }
 }
 

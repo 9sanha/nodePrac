@@ -5,7 +5,7 @@ router.get(`/:productId`,async (req, res)=>{
 
     const id = req.params.productId
     
-    const product = await productService.detail(Number(id))
+    const product = await productService.detail(id)
 
     res.status(200).json({data:product})
 })

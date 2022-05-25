@@ -1,8 +1,9 @@
-const db =  require('../../models/index')
-const User = db.Users
+const { User } = require('../../schema/Users')
+
 class UserRepository{
     
     save = (user)=>{
+        
         return User.create({
             userId: user.userId,
             password:user.password,
@@ -10,23 +11,11 @@ class UserRepository{
             email:user.email
         })
     }
-    //TODO: findOne
     findByEmail = async (email)=>{
-        return User.findAll({
-            attributes:['id'],
-            where:{
-                email:email
-            }
-        })
+        return User.findOne({ email: email })
     }
-    //TODO: findOne
     findByUserId = (userId)=>{
-        return User.findAll({
-            attributes:['id','userId','password'],
-            where:{
-                userId:userId
-            }
-        })
+        return User.findOne({ userId: userId })
     }
 }
 

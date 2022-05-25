@@ -14,21 +14,21 @@ class UserService {
         }else{
             user = await userRepository.findByUserId(value)
         }
-        if(user[0] !== undefined){
+        console.log(user);
+        if(user !== null){
             return false
         }else return true
     }
 
     signin = async(reqUser)=>{
 
-        const data = await userRepository.findByUserId(reqUser.userId)
-    
-        if(data[0] === undefined){
+        const user = await userRepository.findByUserId(reqUser.userId)
+
+        if(user === null){
             //TODO
             console.error('아이디 없음');
             return false;
         }else{
-            const user = data[0]['dataValues']
             if (user.password !== reqUser.password){
                 //TODO
                 console.error('비번 다름');
@@ -37,9 +37,7 @@ class UserService {
                 //TODO: jwt 토큰 발급
                 return true
             }
-        }
-
-        
+        }      
     }
 }
 
