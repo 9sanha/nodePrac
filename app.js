@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 const routes = require('./routes/index')
 const bodyParser = require('body-parser'); 
-const dbConnector = require('./db/connector').default
+const dbConnector = require('./db/connector')
 
 app.use(bodyParser.json());
 app.use('/',routes)

@@ -1,22 +1,22 @@
-const { User } = require('../../schema/Users')
+// const { User } = require('../../schema/Users')
 
-class UserRepository{
+// class UserRepository{
     
-    save = (user)=>{
+//     save = (user)=>{
         
-        return User.create({
-            userId: user.userId,
-            password:user.password,
-            name: user.name,
-            email:user.email
-        })
-    }
-    findByEmail = async (email)=>{
-        return User.findOne({ email: email })
-    }
-    findByUserId = (userId)=>{
-        return User.findOne({ userId: userId })
-    }
-}
+//         return User.create({
+//             userId: user.userId,
+//             password:user.password,
+//             name: user.name,
+//             email:user.email
+//         })
+//     }
+//     findByEmail = async (email)=>{
+//         return User.findOne({ email: email })
+//     }
+//     findByUserId = (userId)=>{
+//         return User.findOne({ userId: userId })
+//     }
+// }
 
-module.exports = new UserRepository()
+// module.exports = new UserRepository()
